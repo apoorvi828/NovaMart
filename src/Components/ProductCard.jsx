@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
 
 export default function ProductCards() {
+  const[count , setCount] = useState(0)
+
+  const handleCart = ()=>{
+    setCount(count+1)
+    localStorage.setItem("cartCount",count+1)
+  }
+
+
   const cards = [
     {
       id: 1,
