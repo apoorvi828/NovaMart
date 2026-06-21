@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 export default function ProductCards() {
   const cards = [
@@ -47,8 +48,11 @@ export default function ProductCards() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card) => (
             <div key={card.id} className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <Link to={`/products/${card.id }`} >
               <img className="h-52 w-full object-cover" src={card.image} alt={card.name} />
+  </Link>
 
+  
               <div className="p-5">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-lg font-semibold text-gray-900">{card.name}</h3>
